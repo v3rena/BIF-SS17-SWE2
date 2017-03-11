@@ -62,6 +62,23 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="BusinessLayer.cs" />
+    <Compile Include="CameraListViewModel.cs" />
+    <Compile Include="CameraModel.cs" />
+    <Compile Include="CameraViewModel.cs" />
+    <Compile Include="DataAccessLayer.cs" />
+    <Compile Include="EXIFModel.cs" />
+    <Compile Include="EXIFViewModel.cs" />
+    <Compile Include="IPTCModel.cs" />
+    <Compile Include="IPTCViewModel.cs" />
+    <Compile Include="MainWindowViewModel.cs" />
+    <Compile Include="PhotographerListViewModel.cs" />
+    <Compile Include="PhotographerModel.cs" />
+    <Compile Include="PhotographerViewModel.cs" />
+    <Compile Include="PictureListViewModel.cs" />
+    <Compile Include="PictureModel.cs" />
+    <Compile Include="PictureViewModel.cs" />
+    <Compile Include="SearchViewModel.cs" />
     <Compile Include="Uebungen\UEB3.cs" />
     <Compile Include="Uebungen\UEB4.cs" />
     <Compile Include="Uebungen\UEB5.cs" />
