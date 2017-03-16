@@ -8,43 +8,29 @@ namespace PicDB
 {
     class IPTCViewModel : IIPTCViewModel
     {
+        public IPTCViewModel()
+        { }
+        public IPTCViewModel(IPTCModel imdl)
+        {
+            ByLine = imdl.ByLine;
+            Caption = imdl.Caption;
+            CopyrightNotice = imdl.CopyrightNotice;
+            Headline = imdl.Headline;
+            Keywords = imdl.Keywords;
+        }
         public string ByLine
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
+            get; set;
         }
 
         public string Caption
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
+            get; set;
         }
 
         public string CopyrightNotice
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
+            get; set;
         }
 
         public IEnumerable<string> CopyrightNotices
@@ -57,28 +43,12 @@ namespace PicDB
 
         public string Headline
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
+            get; set;
         }
 
         public string Keywords
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
+            get; set;
         }
     }
 }

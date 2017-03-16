@@ -8,69 +8,38 @@ namespace PicDB
 {
     class IPTCModel : IIPTCModel
     {
+        public IPTCModel()
+        {
+            //mockdata
+            ByLine = "test";
+            Caption = "test";
+            CopyrightNotice = "test";
+            Headline = "test";
+            Keywords = "test";
+        }        
         public string ByLine
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
+            get; set;
         }
 
         public string Caption
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
+            get; set;
         }
 
         public string CopyrightNotice
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
+            get; set;
         }
 
         public string Headline
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
+            get; set;
         }
 
         public string Keywords
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
+            get; set;
         }
     }
 }
