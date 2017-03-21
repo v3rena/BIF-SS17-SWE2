@@ -19,17 +19,17 @@ namespace PicDB
         }
         public ICameraViewModel Camera
         {
-            get;
+            get; set;
         }
 
         public string DisplayName
         {
-            get;
+            get; set;
         }
 
         public IEXIFViewModel EXIF
         {
-            get;
+            get; set;
         }
 
         public string FileName
@@ -39,22 +39,22 @@ namespace PicDB
 
         public string FilePath
         {
-            get;
+            get; set;
         }
 
         public int ID
         {
-            get;
+            get; set;
         }
 
         public IIPTCViewModel IPTC
         {
-            get;
+            get; set;
         }
 
         public IPhotographerViewModel Photographer
         {
-            get;
+            get; set;
         }
     }
 }
