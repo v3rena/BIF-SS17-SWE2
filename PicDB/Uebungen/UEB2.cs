@@ -27,12 +27,12 @@ namespace Uebungen
 
         public BIF.SWE2.Interfaces.Models.IPictureModel GetPictureModel(string filename)
         {
-            throw new NotImplementedException();
+            return new PictureModel(filename);
         }
 
         public BIF.SWE2.Interfaces.ViewModels.IPictureViewModel GetPictureViewModel(BIF.SWE2.Interfaces.Models.IPictureModel mdl)
         {
-            throw new NotImplementedException();
+            return new PictureViewModel((PictureModel)mdl);
         }
 
         public void TestSetup(string picturePath)
@@ -42,7 +42,7 @@ namespace Uebungen
 
         public ICameraModel GetCameraModel(string producer, string make)
         {
-            throw new NotImplementedException();
+            return new CameraModel(producer, make);
         }
 
         public ICameraViewModel GetCameraViewModel(ICameraModel mdl)

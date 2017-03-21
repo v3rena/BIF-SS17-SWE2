@@ -9,82 +9,44 @@ namespace PicDB
 {
     class EXIFModel : IEXIFModel
     {
+        public EXIFModel()
+        {
+            //mockdata
+            ExposureProgram = ExposurePrograms.NotDefined;
+            ExposureTime = 0;
+            Flash = false;
+            FNumber = 0;
+            ISOValue = 0;
+            Make = "test";
+        }
         public ExposurePrograms ExposureProgram
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
+            get; set;
         }
 
         public decimal ExposureTime
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
+            get; set;
         }
 
         public bool Flash
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
+            get; set;
         }
 
         public decimal FNumber
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
+            get; set;
         }
 
         public decimal ISOValue
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
+            get; set;
         }
 
         public string Make
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
+            get; set;
         }
     }
 }

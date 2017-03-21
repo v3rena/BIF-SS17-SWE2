@@ -9,89 +9,68 @@ namespace PicDB
 {
     class EXIFViewModel : IEXIFViewModel
     {
+        public EXIFViewModel()
+        { }
+        public EXIFViewModel(EXIFModel emdl)
+        {
+            ExposureProgram = emdl.ExposureProgram.ToString();
+            //ExposureProgramResource
+            ExposureTime = emdl.ExposureTime;
+            Flash = emdl.Flash;
+            FNumber = emdl.FNumber;
+            //ISORating
+            //ISORatingResource
+            ISOValue = emdl.ISOValue;
+            Make = emdl.Make;
+        }
         public ICameraViewModel Camera
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
+            get; set;
         }
 
         public string ExposureProgram
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
+            get;
         }
 
         public string ExposureProgramResource
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
+            get;
         }
 
         public decimal ExposureTime
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
+            get;
         }
 
         public bool Flash
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
+            get;
         }
 
         public decimal FNumber
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
+            get;
         }
 
         public ISORatings ISORating
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
+            get;
         }
 
         public string ISORatingResource
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
+            get;
         }
 
         public decimal ISOValue
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
+            get;
         }
 
         public string Make
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
+            get;
         }
     }
 }

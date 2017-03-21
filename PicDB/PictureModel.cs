@@ -8,69 +8,37 @@ namespace PicDB
 {
     class PictureModel : IPictureModel
     {
+        public PictureModel()
+        { }
+        public PictureModel(string file)
+        {
+            this.FileName = file;
+            this.EXIF = new EXIFModel();
+            this.IPTC = new IPTCModel();
+        }
         public ICameraModel Camera
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
+            get; set;
         }
 
         public IEXIFModel EXIF
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
+            get; set;
         }
 
         public string FileName
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
+            get; set;
         }
 
         public int ID
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
+            get; set;
         }
 
         public IIPTCModel IPTC
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
+            get; set;
         }
     }
 }

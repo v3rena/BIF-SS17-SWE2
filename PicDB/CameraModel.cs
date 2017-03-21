@@ -9,6 +9,13 @@ namespace PicDB
 {
     class CameraModel : ICameraModel
     {
+        public CameraModel()
+        { }
+        public CameraModel(string producer, string make)
+        {
+            this.Producer = producer;
+            this.Make = make;
+        }
         public DateTime? BoughtOn
         {
             get
@@ -63,15 +70,7 @@ namespace PicDB
 
         public string Make
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
+            get; set;
         }
 
         public string Notes
@@ -89,15 +88,7 @@ namespace PicDB
 
         public string Producer
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
+            get; set;
         }
     }
 }
