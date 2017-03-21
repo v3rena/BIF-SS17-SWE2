@@ -47,7 +47,7 @@ namespace Uebungen
 
         public ICameraViewModel GetCameraViewModel(ICameraModel mdl)
         {
-            throw new NotImplementedException();
+            return new CameraViewModel((CameraModel)mdl);
         }
     }
 }

@@ -9,138 +9,81 @@ namespace PicDB
 {
     class CameraViewModel : ICameraViewModel
     {
+        public CameraViewModel()
+        {
+
+        }
+
+        public CameraViewModel(CameraModel cmdl)
+        {
+            BoughtOn = cmdl.BoughtOn;
+            ID = cmdl.ID;
+            Producer = cmdl.Producer;
+            Make = cmdl.Make;
+        }
         public DateTime? BoughtOn
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
+            get; set;
         }
 
         public int ID
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
+            get;
         }
 
         public decimal ISOLimitAcceptable
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
+            get; set;
         }
 
         public decimal ISOLimitGood
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
+            get; set;
         }
 
         public bool IsValid
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
+            get;
         }
 
         public bool IsValidBoughtOn
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
+            get;
         }
 
         public bool IsValidMake
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
+            get;
         }
 
         public bool IsValidProducer
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
+            get;
         }
 
         public string Make
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
+            get; set;
         }
 
         public string Notes
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
+            get; set;
         }
 
         public int NumberOfPictures
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
+            get;
         }
 
         public string Producer
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
+            get; set;
         }
 
         public string ValidationSummary
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
+            get;
         }
 
         public ISORatings TranslateISORating(decimal iso)

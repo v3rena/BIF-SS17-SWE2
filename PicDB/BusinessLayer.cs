@@ -4,11 +4,16 @@ using System.Linq;
 using System.Text;
 using BIF.SWE2.Interfaces;
 using BIF.SWE2.Interfaces.Models;
+using System.IO;
 
 namespace PicDB
 {
     class BusinessLayer : IBusinessLayer
     {
+        public BusinessLayer()
+        {
+            Pictures = new List<IPictureModel>();
+        }
         public void DeletePhotographer(int ID)
         {
             throw new NotImplementedException();
@@ -56,7 +61,7 @@ namespace PicDB
 
         public IEnumerable<IPictureModel> GetPictures()
         {
-            throw new NotImplementedException();
+            return Pictures;
         }
 
         public IEnumerable<IPictureModel> GetPictures(string namePart, IPhotographerModel photographerParts, IIPTCModel iptcParts, IEXIFModel exifParts)
@@ -76,12 +81,18 @@ namespace PicDB
 
         public void Sync()
         {
-            throw new NotImplementedException();
+            string[] fileEntries = Directory.GetFiles(".\\Pictures");
+            foreach (string fileName in fileEntries)
+            {
+                Pictures.Add(new PictureModel(fileName));
+            }
         }
 
         public void WriteIPTC(string filename, IIPTCModel iptc)
         {
             throw new NotImplementedException();
         }
+
+        private List<IPictureModel> Pictures;
     }
 }
