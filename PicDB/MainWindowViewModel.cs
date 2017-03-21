@@ -12,7 +12,7 @@ namespace PicDB
         {
             get
             {
-                throw new NotImplementedException();
+                return new PictureViewModel();
             }
         }
 
@@ -20,7 +20,7 @@ namespace PicDB
         {
             get
             {
-                throw new NotImplementedException();
+                return new PictureListViewModel();
             }
         }
 
@@ -28,7 +28,7 @@ namespace PicDB
         {
             get
             {
-                throw new NotImplementedException();
+                return new SearchViewModel();
             }
         }
     }

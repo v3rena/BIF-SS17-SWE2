@@ -17,6 +17,9 @@ namespace PicDB
 
             set
             {
+                //if(photographerBirthday!=value)
+                //{photographerBirthday=value}
+                //OnNotifyPropertyChange - notify views of change!!
                 throw new NotImplementedException();
             }
         }
@@ -46,6 +49,7 @@ namespace PicDB
         {
             get
             {
+                //return IsValidBirthDay && IsValidLastName;
                 throw new NotImplementedException();
             }
         }
@@ -54,6 +58,7 @@ namespace PicDB
         {
             get
             {
+                //return !photographer.Birthday.HasValue || photographer.Birthday < DateTime.Today;
                 throw new NotImplementedException();
             }
         }
@@ -70,6 +75,7 @@ namespace PicDB
         {
             get
             {
+                //return string.IsNullOrWhiteSpace(photographer.LastName);
                 throw new NotImplementedException();
             }
 
