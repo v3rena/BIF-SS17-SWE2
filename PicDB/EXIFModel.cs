@@ -5,6 +5,8 @@ using System.Text;
 using BIF.SWE2.Interfaces;
 using BIF.SWE2.Interfaces.Models;
 
+//ExifLibrary
+
 namespace PicDB
 {
     class EXIFModel : IEXIFModel

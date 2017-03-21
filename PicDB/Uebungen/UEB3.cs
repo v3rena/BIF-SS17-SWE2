@@ -16,7 +16,7 @@ namespace Uebungen
 
         public IBusinessLayer GetBusinessLayer()
         {
-            throw new NotImplementedException();
+            return new BusinessLayer();
         }
 
         public void TestSetup(string picturePath)
@@ -26,12 +26,12 @@ namespace Uebungen
 
         public IDataAccessLayer GetDataAccessLayer()
         {
-            throw new NotImplementedException();
+            return new DataAccessLayer();
         }
 
         public ISearchViewModel GetSearchViewModel()
         {
-            throw new NotImplementedException();
+            return new SearchViewModel();
         }
     }
 }
