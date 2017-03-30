@@ -12,7 +12,7 @@ namespace PicDB
         {
             get
             {
-                throw new NotImplementedException();
+                return !string.IsNullOrWhiteSpace(SearchText);
             }
         }
 
@@ -24,17 +24,6 @@ namespace PicDB
             }
         }
 
-        public string SearchText
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
+        public string SearchText { get; set; }
     }
 }

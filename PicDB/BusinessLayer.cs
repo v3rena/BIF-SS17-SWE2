@@ -12,8 +12,9 @@ namespace PicDB
     {
         public BusinessLayer()
         {
-            Pictures = new List<IPictureModel>();
+            
         }
+
         public void DeletePhotographer(int ID)
         {
             throw new NotImplementedException();
@@ -41,7 +42,7 @@ namespace PicDB
 
         public IEnumerable<ICameraModel> GetCameras()
         {
-            throw new NotImplementedException();
+            return Cameras;
         }
 
         public IPhotographerModel GetPhotographer(int ID)
@@ -51,7 +52,7 @@ namespace PicDB
 
         public IEnumerable<IPhotographerModel> GetPhotographers()
         {
-            throw new NotImplementedException();
+            return Photographers;
         }
 
         public IPictureModel GetPicture(int ID)
@@ -93,6 +94,10 @@ namespace PicDB
             throw new NotImplementedException();
         }
 
-        private List<IPictureModel> Pictures;
+        private List<IPictureModel> Pictures = new List<IPictureModel>();
+
+        private List<IPhotographerModel> Photographers = new List<IPhotographerModel>();
+
+        private List<ICameraModel> Cameras = new List<ICameraModel>();
     }
 }
