@@ -12,6 +12,7 @@ namespace PicDB
         { }
         public PictureViewModel(PictureModel mdl)
         {
+            this.mdl = mdl;
             this.FileName = mdl.FileName;
             this.EXIF = new EXIFViewModel((EXIFModel)mdl.EXIF);
             this.IPTC = new IPTCViewModel((IPTCModel)mdl.IPTC);
@@ -19,7 +20,10 @@ namespace PicDB
         }
         public ICameraViewModel Camera
         {
-            get; set;
+            get
+            {
+                return new CameraViewModel((CameraModel)this.mdl.Camera);
+            }
         }
 
         public string DisplayName
@@ -53,6 +57,11 @@ namespace PicDB
         }
 
         public IPhotographerViewModel Photographer
+        {
+            get; set;
+        }
+
+        private PictureModel mdl
         {
             get; set;
         }
