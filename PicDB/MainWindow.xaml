@@ -28,24 +28,31 @@
 			</MenuItem>
 		</Menu>
 
-        <DockPanel DockPanel.Dock="Top" LastChildFill="True">
+        <DockPanel DockPanel.Dock="Top" >
             <Button Width="50" Height="20" DockPanel.Dock="Right" HorizontalAlignment="Right">
                 Search
             </Button>
-            <TextBox Height="20" DockPanel.Dock="Left"/>
+            <TextBox Height="20" />
         </DockPanel>
 
-        <DockPanel LastChildFill="True">
-            <TabControl DockPanel.Dock="Right" Width="200">
-                <TabItem Header="IPTC"/>
-                <TabItem Header="EXIF"/>
-            </TabControl>
-            <DockPanel DockPanel.Dock="Left" LastChildFill="True">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <DockPanel Grid.Column="0" LastChildFill="True">
                 <Image>
 
                 </Image>
             </DockPanel>
-        </DockPanel>
+            
+            <GridSplitter Grid.Column="1" Width="5"/>
+            <TabControl Grid.Column="2">
+                <TabItem Header="IPTC"/>
+                <TabItem Header="EXIF"/>
+            </TabControl>            
+        </Grid>
 
     </DockPanel>
 </Window>
