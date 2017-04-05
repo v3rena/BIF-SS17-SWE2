@@ -26,7 +26,7 @@ namespace Uebungen
 
         public IDataAccessLayer GetDataAccessLayer()
         {
-            throw new NotImplementedException();
+            return new MockDAL();
         }
 
         public ISearchViewModel GetSearchViewModel()
