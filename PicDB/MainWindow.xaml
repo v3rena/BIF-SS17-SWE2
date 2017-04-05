@@ -14,18 +14,19 @@
         
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="File">
-                <MenuItem Header="test1"/>
+                <MenuItem Header="Test1"/>
                 <MenuItem Header="Test2"/>
             </MenuItem>
             <MenuItem Header="Edit">
-                <MenuItem Header="Photographer">
-                    <MenuItem Header="New"/>
-                    <MenuItem Header="Edit"/>
-                    <MenuItem Header="List"/>
-                </MenuItem>
-            </MenuItem>
+				<MenuItem Header="IPTC"/>
+			</MenuItem>
             <MenuItem Header="Options"/>
-        </Menu>
+			<MenuItem Header="Photographers">
+				<MenuItem Header="New"/>
+				<MenuItem Header="Edit"/>
+				<MenuItem Header="List"/>
+			</MenuItem>
+		</Menu>
 
         <DockPanel DockPanel.Dock="Top" LastChildFill="True">
             <Button Width="50" Height="20" DockPanel.Dock="Right" HorizontalAlignment="Right">
