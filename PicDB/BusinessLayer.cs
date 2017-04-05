@@ -41,27 +41,27 @@ namespace PicDB
 
         public ICameraModel GetCamera(int ID)
         {
-            throw new NotImplementedException();
+            return DAL.GetCamera(ID);
         }
 
         public IEnumerable<ICameraModel> GetCameras()
         {
-            return Cameras;
+            return DAL.GetCameras();
         }
 
         public IPhotographerModel GetPhotographer(int ID)
         {
-            throw new NotImplementedException();
+            return DAL.GetPhotographer(ID);
         }
 
         public IEnumerable<IPhotographerModel> GetPhotographers()
         {
-            return Photographers;
+            return DAL.GetPhotographers();
         }
 
         public IPictureModel GetPicture(int ID)
         {
-            throw new NotImplementedException();
+            return DAL.GetPicture(ID);
         }
 
         public IEnumerable<IPictureModel> GetPictures()
@@ -71,7 +71,7 @@ namespace PicDB
 
         public IEnumerable<IPictureModel> GetPictures(string namePart, IPhotographerModel photographerParts, IIPTCModel iptcParts, IEXIFModel exifParts)
         {
-            throw new NotImplementedException();
+            return DAL.GetPictures(namePart, photographerParts, iptcParts, exifParts);
         }
 
         public void Save(IPhotographerModel photographer)
@@ -99,10 +99,6 @@ namespace PicDB
         }
 
         private List<IPictureModel> Pictures = new List<IPictureModel>();
-
-        private List<IPhotographerModel> Photographers = new List<IPhotographerModel>();
-
-        private List<ICameraModel> Cameras = new List<ICameraModel>();
 
         private IDataAccessLayer DAL;
     }
