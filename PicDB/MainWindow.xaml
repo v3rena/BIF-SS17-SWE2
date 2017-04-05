@@ -11,8 +11,18 @@
                     Content="X"
                     Click="CloseButton_Click"/>
         </DockPanel>
-        
-        <Menu DockPanel.Dock="Top">
+
+		<DockPanel LastChildFill="True">
+			<TabControl DockPanel.Dock="Top">
+				<TabItem Header="Pictures">
+
+				</TabItem>
+				<TabItem Header="Photographers">
+				
+				</TabItem>
+			</TabControl>
+
+			<Menu DockPanel.Dock="Top">
             <MenuItem Header="File">
                 <MenuItem Header="Test1"/>
                 <MenuItem Header="Test2"/>
@@ -20,13 +30,8 @@
             <MenuItem Header="Edit">
 				<MenuItem Header="IPTC"/>
 			</MenuItem>
-            <MenuItem Header="Options"/>
-			<MenuItem Header="Photographers">
-				<MenuItem Header="New"/>
-				<MenuItem Header="Edit"/>
-				<MenuItem Header="List"/>
-			</MenuItem>
-		</Menu>
+				<MenuItem Header="Options"/>
+			</Menu>
 
         <DockPanel DockPanel.Dock="Top" LastChildFill="True">
             <Button Width="50" Height="20" DockPanel.Dock="Right" HorizontalAlignment="Right">
@@ -37,8 +42,12 @@
 
         <DockPanel LastChildFill="True">
             <TabControl DockPanel.Dock="Right" Width="200">
-                <TabItem Header="IPTC"/>
-                <TabItem Header="EXIF"/>
+				<TabItem Header="IPTC">
+					Here goes IPTC
+				</TabItem>
+				<TabItem Header="EXIF">
+					EXIF Infos go here
+				</TabItem>
             </TabControl>
             <DockPanel DockPanel.Dock="Left" LastChildFill="True">
                 <Image>
@@ -46,6 +55,6 @@
                 </Image>
             </DockPanel>
         </DockPanel>
-
-    </DockPanel>
+		</DockPanel>
+	</DockPanel>
 </Window>
