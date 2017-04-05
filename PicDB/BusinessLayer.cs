@@ -10,11 +10,6 @@ namespace PicDB
 {
     class BusinessLayer : IBusinessLayer
     {
-        public BusinessLayer()
-        {
-            
-        }
-
         public void DeletePhotographer(int ID)
         {
             throw new NotImplementedException();
