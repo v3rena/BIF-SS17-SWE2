@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using BIF.SWE2.Interfaces.ViewModels;
 
+
 namespace PicDB
 {
     class PictureViewModel : IPictureViewModel
