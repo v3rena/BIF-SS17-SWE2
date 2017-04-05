@@ -10,6 +10,15 @@ namespace PicDB
 {
     class BusinessLayer : IBusinessLayer
     {
+        public BusinessLayer()
+        {
+            DAL = new DataAccessLayer();
+        }
+
+        public BusinessLayer(bool isTest)
+        {
+            DAL = new MockDAL();
+        }
         public void DeletePhotographer(int ID)
         {
             throw new NotImplementedException();
@@ -94,5 +103,7 @@ namespace PicDB
         private List<IPhotographerModel> Photographers = new List<IPhotographerModel>();
 
         private List<ICameraModel> Cameras = new List<ICameraModel>();
+
+        private IDataAccessLayer DAL;
     }
 }

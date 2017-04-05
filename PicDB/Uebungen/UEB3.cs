@@ -16,7 +16,8 @@ namespace Uebungen
 
         public IBusinessLayer GetBusinessLayer()
         {
-            return new BusinessLayer();
+            var BL = new BusinessLayer(true);
+            return BL;
         }
 
         public void TestSetup(string picturePath)
