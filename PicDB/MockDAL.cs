@@ -17,9 +17,9 @@ namespace PicDB
             FakePictures.Add(new PictureModel());
             FakePictures.Add(new PictureModel());
             FakePictures[0].ID = 1234;
-            
-            //Fake Photographers
-            FakePhotographers.Add(new PhotographerModel());
+
+			//Fake Photographers
+			FakePhotographers.Add(new PhotographerModel());
             FakePhotographers.Add(new PhotographerModel());
             FakePhotographers.Add(new PhotographerModel());
             FakePhotographers[0].ID = 1234;
@@ -29,7 +29,21 @@ namespace PicDB
             FakeCameras.Add(new CameraModel());
             FakeCameras.Add(new CameraModel());
             FakeCameras[0].ID = 1234;
-        }
+
+			//Fake EXIF
+			EXIFModel exmdl = new EXIFModel();
+			exmdl.ExposureProgram = ExposurePrograms.Manual;
+			exmdl.ExposureTime = 1000;
+			exmdl.Flash = false;
+			exmdl.FNumber = 10;
+			exmdl.ISOValue = 200;
+			exmdl.Make = "Blubb";
+
+			FakePictures[1].FileName = "Img1.jpg";
+			FakePictures[1].EXIF = exmdl;
+
+
+		}
         public void DeletePhotographer(int ID)
         {
             for(int i = 0; i < FakePhotographers.Count; i++)
@@ -103,7 +117,21 @@ namespace PicDB
             return null;            
         }
 
-        public IEnumerable<IPictureModel> GetPictures(string namePart, IPhotographerModel photographerParts, IIPTCModel iptcParts, IEXIFModel exifParts)
+		public IPictureModel GetPicture(string filename)
+		{
+			if (FakePictures != null && FakePictures.Count() > 0)
+			{
+				var res = FakePictures.Where(x => x.FileName == filename);
+				if (res.Count() > 0)
+				{
+					return res.First();
+				}
+			}
+			return null;
+		}
+
+
+		public IEnumerable<IPictureModel> GetPictures(string namePart, IPhotographerModel photographerParts, IIPTCModel iptcParts, IEXIFModel exifParts)
         {
             return FakePictures;
         }

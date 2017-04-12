@@ -17,8 +17,9 @@ namespace Uebungen
 
         public IBusinessLayer GetBusinessLayer()
         {
-            throw new NotImplementedException();
-        }
+			var BL = new BusinessLayer(true);
+			return BL;
+		}
 
         public void TestSetup(string picturePath)
         {

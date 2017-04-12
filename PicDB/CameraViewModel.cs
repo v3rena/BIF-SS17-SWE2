@@ -3,18 +3,26 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using BIF.SWE2.Interfaces;
+using BIF.SWE2.Interfaces.Models;
 using BIF.SWE2.Interfaces.ViewModels;
 
 namespace PicDB
 {
     class CameraViewModel : ICameraViewModel
     {
-        public CameraViewModel()
+		private ICameraModel mdl;
+
+		public CameraViewModel()
         {
 
         }
 
-        public CameraViewModel(CameraModel cmdl)
+		public CameraViewModel(ICameraModel mdl)
+		{
+			this.mdl = mdl;
+		}
+
+		public CameraViewModel(CameraModel cmdl)
         {
             BoughtOn = cmdl.BoughtOn;
             ID = cmdl.ID;

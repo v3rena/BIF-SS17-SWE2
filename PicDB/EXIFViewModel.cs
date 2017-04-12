@@ -4,16 +4,24 @@ using System.Linq;
 using System.Text;
 using BIF.SWE2.Interfaces;
 using BIF.SWE2.Interfaces.ViewModels;
+using BIF.SWE2.Interfaces.Models;
 
 namespace PicDB
 {
     class EXIFViewModel : IEXIFViewModel
     {
-        public EXIFViewModel()
-        { }
+		ICameraViewModel cameraView;
+		IEXIFModel exifMdl;
+
+		public EXIFViewModel()
+        {
+			exifMdl = new EXIFModel();
+		}
         public EXIFViewModel(EXIFModel emdl)
         {
-            ExposureProgram = emdl.ExposureProgram.ToString();
+			exifMdl = emdl;
+
+			/*ExposureProgram = emdl.ExposureProgram.ToString();
             //ExposureProgramResource
             ExposureTime = emdl.ExposureTime;
             Flash = emdl.Flash;
@@ -21,56 +29,112 @@ namespace PicDB
             //ISORating
             //ISORatingResource
             ISOValue = emdl.ISOValue;
-            Make = emdl.Make;
-        }
-        public ICameraViewModel Camera
+            Make = emdl.Make;*/
+		}
+
+		/*public EXIFViewModel(IPictureModel pictureModel) : this()
+		{
+			cameraView = new CameraViewModel(pictureModel.Camera);
+		}*/
+
+		public ICameraViewModel Camera
         {
-            get; set;
-        }
+			get
+			{
+				return cameraView;
+			}
+
+			set
+			{
+				cameraView = value;
+			}
+		}
 
         public string ExposureProgram
-        {
-            get;
-        }
+		{
+			get
+			{
+				return exifMdl.ExposureProgram.ToString();
+			}
+		}
 
         public string ExposureProgramResource
-        {
-            get;
-        }
+		{
+			get
+			{
+				return exifMdl.ExposureProgram.ToString();
+			}
+		}
 
         public decimal ExposureTime
         {
-            get;
-        }
+			get
+			{
+				return exifMdl.ExposureTime;
+			}
+		}
 
         public bool Flash
         {
-            get;
-        }
+			get
+			{
+				return exifMdl.Flash;
+			}
+		}
 
         public decimal FNumber
         {
-            get;
-        }
+			get
+			{
+				return exifMdl.FNumber;
+			}
+		}
 
         public ISORatings ISORating
         {
-            get;
-        }
+			get
+			{
+				if (exifMdl.ISOValue >= 100 && exifMdl.ISOValue < 800)
+				{
+					return ISORatings.Good;
+				}
+				else if (exifMdl.ISOValue >= 800 && exifMdl.ISOValue < 1600)
+				{
+					return ISORatings.Acceptable;
+				}
+				else if (exifMdl.ISOValue >= 1600)
+				{
+					return ISORatings.Noisey;
+				}
+				else
+				{
+					return ISORatings.NotDefined;
+				}
+			}
+		}
 
         public string ISORatingResource
-        {
-            get;
-        }
+		{
+			get
+			{
+				return ISORating.ToString();
+			}
+		}
 
         public decimal ISOValue
         {
-            get;
-        }
+			get
+			{
+				return exifMdl.ISOValue;
+			}
+		}
 
         public string Make
         {
-            get;
-        }
+			get
+			{
+				return exifMdl.Make;
+			}
+		}
     }
 }
