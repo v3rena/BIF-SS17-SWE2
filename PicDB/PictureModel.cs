@@ -8,7 +8,7 @@ namespace PicDB
 {
     class PictureModel : IPictureModel
     {
-		CameraModel camera;
+		//CameraModel camera;
 
 		public PictureModel()
         { }
@@ -20,15 +20,7 @@ namespace PicDB
         }
         public ICameraModel Camera
         {
-			get
-			{
-				return camera;
-			}
-
-			set
-			{
-				camera = (CameraModel)value;
-			}
+			get; set;
 		}
 
         public IEXIFModel EXIF

@@ -27,12 +27,12 @@ namespace Uebungen
 
         public IPictureModel GetEmptyPictureModel()
         {
-            throw new NotImplementedException();
+			return new PictureModel();
         }
 
         public IPhotographerModel GetEmptyPhotographerModel()
         {
-            throw new NotImplementedException();
+			return new PhotographerModel();
         }
     }
 }
