@@ -8,7 +8,6 @@ namespace PicDB
 {
     class PictureModel : IPictureModel
     {
-		//CameraModel camera;
 
 		public PictureModel()
         { }

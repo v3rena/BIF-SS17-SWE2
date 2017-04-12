@@ -30,11 +30,6 @@ namespace PicDB
             Make = cmdl.Make;
         }
 
-		/*public CameraViewModel(IPictureModel pictureModel)
-		{
-			this. = pictureModel.Camera;
-		}*/
-
 		public DateTime? BoughtOn
         {
             get; set;
