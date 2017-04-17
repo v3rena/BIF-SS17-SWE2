@@ -10,7 +10,7 @@ namespace PicDB
 {
     class CameraViewModel : ICameraViewModel
     {
-		private ICameraModel mdl;
+		private ICameraModel cmdl;
 
 		public CameraViewModel()
         {
@@ -18,36 +18,59 @@ namespace PicDB
         }
 
 		public CameraViewModel(ICameraModel mdl)
-		{
-			this.mdl = mdl;
-		}
-
-		public CameraViewModel(CameraModel cmdl)
         {
+            this.cmdl = mdl;
+            /*
             BoughtOn = cmdl.BoughtOn;
             ID = cmdl.ID;
             Producer = cmdl.Producer;
             Make = cmdl.Make;
+            ISOLimitGood = cmdl.ISOLimitGood;
+            ISOLimitAcceptable = cmdl.ISOLimitAcceptable;*/
         }
 
 		public DateTime? BoughtOn
         {
-            get; set;
+            get
+            {
+                return cmdl.BoughtOn;
+            }
+            set
+            {
+                cmdl.BoughtOn = value;
+            }
         }
 
         public int ID
         {
-            get;
+            get
+            {
+                return cmdl.ID;
+            }
         }
 
         public decimal ISOLimitAcceptable
         {
-            get; set;
+            get
+            {
+                return cmdl.ISOLimitAcceptable;
+            }
+            set
+            {
+                cmdl.ISOLimitAcceptable = value;
+            }
         }
 
         public decimal ISOLimitGood
         {
-            get; set;
+            get
+            {
+                return cmdl.ISOLimitGood;
+            }
+            set
+            {
+                cmdl.ISOLimitGood = value;
+            }
         }
 
         public bool IsValid
@@ -100,7 +123,7 @@ namespace PicDB
         {
 			get
 			{
-				if (string.IsNullOrEmpty(Producer) || string.IsNullOrWhiteSpace(Producer))
+				if (string.IsNullOrEmpty(cmdl.Producer) || string.IsNullOrWhiteSpace(cmdl.Producer))
 				{
 					return false;
 				}
@@ -113,12 +136,26 @@ namespace PicDB
 
         public string Make
         {
-            get; set;
+            get
+            {
+                return cmdl.Make;
+            }
+            set
+            {
+                cmdl.Make = value;
+            }
         }
 
         public string Notes
         {
-            get; set;
+            get
+            {
+                return cmdl.Make;
+            }
+            set
+            {
+                cmdl.Make = value;
+            }
         }
 
         public int NumberOfPictures
@@ -128,7 +165,14 @@ namespace PicDB
 
         public string Producer
         {
-            get; set;
+            get
+            {
+                return cmdl.Producer;
+            }
+            set
+            {
+                cmdl.Producer = value;
+            }
         }
 
         public string ValidationSummary

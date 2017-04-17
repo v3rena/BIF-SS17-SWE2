@@ -17,21 +17,28 @@ namespace PicDB
             FakePictures.Add(new PictureModel());
             FakePictures.Add(new PictureModel());
             FakePictures[0].ID = 1234;
+            FakePictures[0].FileName = "Blume.jpg";
+            FakePictures[1].ID = 2;
+            FakePictures[2].ID = 3;
 
-			//Fake Photographers
-			FakePhotographers.Add(new PhotographerModel());
+            //Fake Photographers
+            FakePhotographers.Add(new PhotographerModel());
             FakePhotographers.Add(new PhotographerModel());
             FakePhotographers.Add(new PhotographerModel());
             FakePhotographers[0].ID = 1234;
-            
+            FakePhotographers[1].ID = 2;
+            FakePhotographers[2].ID = 3;
+
             //Fake Cameras
             FakeCameras.Add(new CameraModel());
             FakeCameras.Add(new CameraModel());
             FakeCameras.Add(new CameraModel());
             FakeCameras[0].ID = 1234;
+            FakeCameras[1].ID = 2;
+            FakeCameras[2].ID = 3;
 
-			//Fake EXIF
-			EXIFModel exmdl = new EXIFModel();
+            //Fake EXIF
+            EXIFModel exmdl = new EXIFModel();
 			exmdl.ExposureProgram = ExposurePrograms.Manual;
 			exmdl.ExposureTime = 1000;
 			exmdl.Flash = false;
@@ -133,17 +140,35 @@ namespace PicDB
 
 		public IEnumerable<IPictureModel> GetPictures(string namePart, IPhotographerModel photographerParts, IIPTCModel iptcParts, IEXIFModel exifParts)
         {
-            return FakePictures;
+            if(namePart == null && photographerParts == null && iptcParts == null && exifParts == null)
+            {
+                return FakePictures;
+            }
+            List<IPictureModel> elements = new List<IPictureModel>();
+            foreach(var pic in FakePictures)
+            {
+                if(pic.FileName != null)
+                {
+                    bool contains = pic.FileName.ToLower().Contains(namePart.ToLower());
+                    if (contains)
+                    {
+                        elements.Add(pic);
+                    }
+                }                
+            }
+            return elements;
         }
 
         public void Save(IPhotographerModel photographer)
         {
-            throw new NotImplementedException();
+            FakePhotographers.Add(photographer);
+            FakePhotographers.Last().ID = FakePhotographers[FakePhotographers.Count - 2].ID + 1;
         }
 
         public void Save(IPictureModel picture)
         {
-            throw new NotImplementedException();
+            FakePictures.Add(picture);
+            FakePictures.Last().ID = FakePictures[FakePictures.Count - 2].ID + 1;
         }
 
         private List<IPictureModel> FakePictures = new List<IPictureModel>();

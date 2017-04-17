@@ -43,7 +43,7 @@ namespace Uebungen
 
         public ICameraViewModel GetCameraViewModel(ICameraModel mdl)
         {
-			return new CameraViewModel();
+			return new CameraViewModel(mdl);
         }
     }
 }

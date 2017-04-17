@@ -9,8 +9,6 @@ namespace PicDB
 {
     class PhotographerViewModel : IPhotographerViewModel
     {
-		private IPhotographerModel mdl;
-
 		public PhotographerViewModel()
 		{
 
@@ -18,22 +16,20 @@ namespace PicDB
 
 		public PhotographerViewModel(IPhotographerModel mdl)
 		{
-			this.mdl = mdl;
+			pmdl = mdl;
 		}
 
 		public DateTime? BirthDay
         {
             get
             {
-                throw new NotImplementedException();
+                return pmdl.BirthDay;
             }
 
             set
             {
-                //if(photographerBirthday!=value)
-                //{photographerBirthday=value}
+                pmdl.BirthDay = value;
                 //OnNotifyPropertyChange - notify views of change!!
-                throw new NotImplementedException();
             }
         }
 
@@ -41,12 +37,11 @@ namespace PicDB
         {
             get
             {
-                throw new NotImplementedException();
+                return pmdl.FirstName;
             }
-
             set
             {
-                throw new NotImplementedException();
+                pmdl.FirstName = value;
             }
         }
 
@@ -54,7 +49,7 @@ namespace PicDB
         {
             get
             {
-                throw new NotImplementedException();
+                return pmdl.ID;
             }
         }
 
@@ -62,8 +57,7 @@ namespace PicDB
         {
             get
             {
-                //return IsValidBirthDay && IsValidLastName;
-                throw new NotImplementedException();
+                return IsValidBirthDay && IsValidLastName;
             }
         }
 
@@ -71,8 +65,15 @@ namespace PicDB
         {
             get
             {
+                if(!pmdl.BirthDay.HasValue || pmdl.BirthDay < DateTime.Today)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
                 //return !photographer.Birthday.HasValue || photographer.Birthday < DateTime.Today;
-                throw new NotImplementedException();
             }
         }
 
@@ -80,7 +81,14 @@ namespace PicDB
         {
             get
             {
-                throw new NotImplementedException();
+                if(String.IsNullOrWhiteSpace(LastName))
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
             }
         }
 
@@ -88,13 +96,11 @@ namespace PicDB
         {
             get
             {
-                //return string.IsNullOrWhiteSpace(photographer.LastName);
-                throw new NotImplementedException();
+                return pmdl.LastName;
             }
-
             set
             {
-                throw new NotImplementedException();
+                pmdl.LastName = value;
             }
         }
 
@@ -102,29 +108,34 @@ namespace PicDB
         {
             get
             {
-                throw new NotImplementedException();
+                return pmdl.Notes;
             }
-
             set
             {
-                throw new NotImplementedException();
+                pmdl.Notes = value;
             }
         }
 
         public int NumberOfPictures
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
+            get;
         }
 
         public string ValidationSummary
         {
             get
             {
-                throw new NotImplementedException();
+                if(IsValid)
+                {
+                    return "";
+                }
+                else
+                {
+                    return "Photographer ViewModel is not valid";
+                }
             }
         }
+
+        private IPhotographerModel pmdl;
     }
 }
