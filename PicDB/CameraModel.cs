@@ -10,11 +10,14 @@ namespace PicDB
     class CameraModel : ICameraModel
     {
         public CameraModel()
-        { }
+        {
+
+		}
+
         public CameraModel(string producer, string make)
         {
-            this.Producer = producer;
-            this.Make = make;
+            Producer = producer;
+            Make = make;
         }
         public DateTime? BoughtOn
         {

@@ -14,12 +14,12 @@ namespace PicDB
         public EXIFModel()
         {
             //mockdata
-            ExposureProgram = ExposurePrograms.NotDefined;
+            /*ExposureProgram = ExposurePrograms.NotDefined;
             ExposureTime = 0;
             Flash = false;
             FNumber = 0;
             ISOValue = 0;
-            Make = "test";
+            Make = "test";*/
         }
         public ExposurePrograms ExposureProgram
         {

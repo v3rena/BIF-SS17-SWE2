@@ -11,22 +11,7 @@
                     Content="X"
                     Click="CloseButton_Click"/>
         </DockPanel>
-        
-        <Menu DockPanel.Dock="Top">
-            <MenuItem Header="File">
-                <MenuItem Header="Test1"/>
-                <MenuItem Header="Test2"/>
-            </MenuItem>
-            <MenuItem Header="Edit">
-				<MenuItem Header="IPTC"/>
-			</MenuItem>
-            <MenuItem Header="Options"/>
-			<MenuItem Header="Photographers">
-				<MenuItem Header="New"/>
-				<MenuItem Header="Edit"/>
-				<MenuItem Header="List"/>
-			</MenuItem>
-		</Menu>
+
 
         <DockPanel DockPanel.Dock="Top" >
             <Button Width="50" Height="20" DockPanel.Dock="Right" HorizontalAlignment="Right">
@@ -46,13 +31,12 @@
 
                 </Image>
             </DockPanel>
-            
+
             <GridSplitter Grid.Column="1" Width="5"/>
             <TabControl Grid.Column="2">
                 <TabItem Header="IPTC"/>
                 <TabItem Header="EXIF"/>
-            </TabControl>            
+            </TabControl>
         </Grid>
-
     </DockPanel>
 </Window>

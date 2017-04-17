@@ -8,7 +8,8 @@ namespace PicDB
 {
     class PictureModel : IPictureModel
     {
-        public PictureModel()
+
+		public PictureModel()
         { }
         public PictureModel(string file)
         {
@@ -18,8 +19,8 @@ namespace PicDB
         }
         public ICameraModel Camera
         {
-            get; set;
-        }
+			get; set;
+		}
 
         public IEXIFModel EXIF
         {

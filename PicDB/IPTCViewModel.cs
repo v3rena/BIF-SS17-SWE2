@@ -10,6 +10,7 @@ namespace PicDB
     {
         public IPTCViewModel()
         { }
+
         public IPTCViewModel(IPTCModel imdl)
         {
             ByLine = imdl.ByLine;
@@ -18,6 +19,7 @@ namespace PicDB
             Headline = imdl.Headline;
             Keywords = imdl.Keywords;
         }
+
         public string ByLine
         {
             get; set;

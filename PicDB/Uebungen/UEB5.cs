@@ -17,8 +17,9 @@ namespace Uebungen
 
         public IBusinessLayer GetBusinessLayer()
         {
-            throw new NotImplementedException();
-        }
+			var BL = new BusinessLayer(true);
+			return BL;
+		}
 
         public void TestSetup(string picturePath)
         {
@@ -27,22 +28,22 @@ namespace Uebungen
 
         public IPhotographerModel GetEmptyPhotographerModel()
         {
-            throw new NotImplementedException();
+			return new PhotographerModel();
         }
 
         public IPhotographerViewModel GetPhotographerViewModel(IPhotographerModel mdl)
         {
-            throw new NotImplementedException();
+			return new PhotographerViewModel(mdl);
         }
 
         public ICameraModel GetEmptyCameraModel()
         {
-            throw new NotImplementedException();
+			return new CameraModel();
         }
 
         public ICameraViewModel GetCameraViewModel(ICameraModel mdl)
         {
-            throw new NotImplementedException();
+			return new CameraViewModel();
         }
     }
 }

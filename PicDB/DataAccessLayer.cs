@@ -44,7 +44,12 @@ namespace PicDB
             throw new NotImplementedException();
         }
 
-        public IEnumerable<IPictureModel> GetPictures(string namePart, IPhotographerModel photographerParts, IIPTCModel iptcParts, IEXIFModel exifParts)
+		public IPictureModel GetPicture(string filename)
+		{
+			throw new NotImplementedException();
+		}
+
+		public IEnumerable<IPictureModel> GetPictures(string namePart, IPhotographerModel photographerParts, IIPTCModel iptcParts, IEXIFModel exifParts)
         {
             throw new NotImplementedException();
         }
@@ -58,5 +63,5 @@ namespace PicDB
         {
             throw new NotImplementedException();
         }
-    }
+	}
 }

@@ -29,10 +29,12 @@ namespace PicDB
             throw new NotImplementedException();
         }
 
+		//TODO: Anpassen für Datenbank
         public IEXIFModel ExtractEXIF(string filename)
         {
-            throw new NotImplementedException();
-        }
+			MockDAL dalMock = new MockDAL();
+			return dalMock.GetPicture(filename).EXIF;
+		}
 
         public IIPTCModel ExtractIPTC(string filename)
         {

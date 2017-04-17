@@ -8,7 +8,9 @@ namespace PicDB
 {
     class IPTCModel : IIPTCModel
     {
-        public IPTCModel()
+		private IIPTCModel mdl;
+
+		public IPTCModel()
         {
             //mockdata
             ByLine = "test";
@@ -16,8 +18,14 @@ namespace PicDB
             CopyrightNotice = "test";
             Headline = "test";
             Keywords = "test";
-        }        
-        public string ByLine
+        }
+
+		public IPTCModel(IIPTCModel mdl)
+		{
+			this.mdl = mdl;
+		}
+
+		public string ByLine
         {
             get; set;
         }

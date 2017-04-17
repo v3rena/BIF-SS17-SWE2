@@ -2,13 +2,26 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using BIF.SWE2.Interfaces.Models;
 using BIF.SWE2.Interfaces.ViewModels;
 
 namespace PicDB
 {
     class PhotographerViewModel : IPhotographerViewModel
     {
-        public DateTime? BirthDay
+		private IPhotographerModel mdl;
+
+		public PhotographerViewModel()
+		{
+
+		}
+
+		public PhotographerViewModel(IPhotographerModel mdl)
+		{
+			this.mdl = mdl;
+		}
+
+		public DateTime? BirthDay
         {
             get
             {
