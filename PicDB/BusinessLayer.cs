@@ -64,7 +64,8 @@ namespace PicDB
                         if (metadata.Keywords != null)
                             IPTC.Keywords = metadata.Keywords.ToString();
 
-                        return IPTC;
+						stream.Close();
+						return IPTC;
                     }
                     else
                     {
