@@ -5,6 +5,7 @@ using System.Text;
 using BIF.SWE2.Interfaces;
 using BIF.SWE2.Interfaces.Models;
 using System.IO;
+using System.Windows.Media.Imaging;
 
 namespace PicDB
 {
@@ -38,7 +39,47 @@ namespace PicDB
 
         public IIPTCModel ExtractIPTC(string filename)
         {
-            throw new NotImplementedException();
+            var pic = DAL.GetPictures(filename, null, null, null);
+
+            if(pic.Count() > 0)
+            {
+                string filepath = Directory.GetCurrentDirectory();
+                filepath += "\\Pictures\\" + filename;
+                if(File.Exists(filepath))
+                {
+                    var stream = new FileStream(filepath, FileMode.Open, FileAccess.Read);
+                    var decoder = new JpegBitmapDecoder(stream, BitmapCreateOptions.None, BitmapCacheOption.None);
+                    var metadata = decoder.Frames[0].Metadata as BitmapMetadata;
+                    if (metadata != null)
+                    {
+                        var IPTC = new IPTCModel();
+                        if(metadata.Author != null)
+                            IPTC.ByLine = metadata.Author.ToString();
+                        if (metadata.Title != null)
+                            IPTC.Headline = metadata.Title;
+                        if (metadata.Subject != null)
+                            IPTC.Caption = metadata.Subject;
+                        if (metadata.Copyright != null)
+                            IPTC.CopyrightNotice = metadata.Copyright;
+                        if (metadata.Keywords != null)
+                            IPTC.Keywords = metadata.Keywords.ToString();
+
+                        return IPTC;
+                    }
+                    else
+                    {
+                        throw new FileFormatException();
+                    }
+                }
+                else
+                {
+                    throw new FileNotFoundException();
+                }
+            }
+            else
+            {
+                throw new FileNotFoundException();
+            }
         }
 
         public ICameraModel GetCamera(int ID)

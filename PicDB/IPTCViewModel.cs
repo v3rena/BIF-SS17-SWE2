@@ -11,46 +11,93 @@ namespace PicDB
         public IPTCViewModel()
         { }
 
-        public IPTCViewModel(IPTCModel imdl)
+        public IPTCViewModel(IPTCModel mdl)
         {
+            imdl = mdl;
+            //, , , , , CC - BY - NC - SA, CC - BY - NC - ND
+            notices.Add("All rights reserved");
+            notices.Add("CC - BY");
+            notices.Add("CC - BY - SA");
+            notices.Add("CC - BY - ND");
+            notices.Add("CC - BY - NC");
+            notices.Add("CC - BY - NC - SA");
+            notices.Add("CC - BY - NC - ND");
+            /*
             ByLine = imdl.ByLine;
             Caption = imdl.Caption;
             CopyrightNotice = imdl.CopyrightNotice;
             Headline = imdl.Headline;
-            Keywords = imdl.Keywords;
+            Keywords = imdl.Keywords;*/
         }
 
         public string ByLine
         {
-            get; set;
+            get
+            {
+                return imdl.ByLine;
+            }
+            set
+            {
+                imdl.ByLine = value;
+            }
         }
 
         public string Caption
         {
-            get; set;
+            get
+            {
+                return imdl.Caption;
+            }
+            set
+            {
+                imdl.Caption = value;
+            }
         }
 
         public string CopyrightNotice
         {
-            get; set;
+            get
+            {
+                return imdl.CopyrightNotice;
+            }
+            set
+            {
+                imdl.CopyrightNotice = value;
+            }
         }
 
         public IEnumerable<string> CopyrightNotices
         {
             get
             {
-                throw new NotImplementedException();
+                return notices;
             }
         }
 
         public string Headline
         {
-            get; set;
+            get
+            {
+                return imdl.Headline;
+            }
+            set
+            {
+                imdl.Headline = value;
+            }
         }
 
         public string Keywords
         {
-            get; set;
+            get
+            {
+                return imdl.Keywords;
+            }
+            set
+            {
+                imdl.Keywords = value;
+            }
         }
+        private IPTCModel imdl;
+        private List<string> notices = new List<string>();
     }
 }
